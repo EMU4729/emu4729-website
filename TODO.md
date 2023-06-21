@@ -4,7 +4,6 @@
 - [x] Navbar, Footer and other Base Layout Stuff
 - [x] Home page
 - [x] About page
-- [ ] Gallery Page
-- [ ] Blog
-- [ ] Contact Page
-- [ ] Join Page
+- [x] Contact Page
+- [x] Join Page
+- [x] Sponsors Page
