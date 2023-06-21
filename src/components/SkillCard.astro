@@ -1,0 +1,29 @@
+---
+import { Image } from "@astrojs/image/components";
+
+export interface Props {
+  title: string;
+  image: string;
+}
+
+const { title, image } = Astro.props as Props;
+---
+
+<div
+  class="border-[1px] border-gray-70 rounded-lg flex flex-col md:flex-row self-center min-h-56 max-w-4xl fade-in-up"
+>
+  <Image
+    src={import(image)}
+    alt={title}
+    class="rounded-lg md:aspect-square object-cover md:w-1/3"
+  />
+  <div class="p-5 flex flex-col gap-1">
+    <span class="text-lg">
+      <slot name="icon" />
+    </span>
+    <h3 class="font-bold text-2xl">{title}</h3>
+    <p class="text-md text-gray-40">
+      <slot name="description" />
+    </p>
+  </div>
+</div>

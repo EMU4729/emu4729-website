@@ -1,0 +1,51 @@
+---
+import FooterSocial from "../components/FooterSocial.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact | EMU 4729">
+  <div
+    class="h-96 px-5 flex flex-col items-center place-content-center text-center gap-3"
+  >
+    <h1 class="font-bold text-3xl">Contact Us</h1>
+    <h3 class="text-xl text-gray-40">
+      We'll get back to you as soon as possible.
+    </h3>
+    <p>
+      Email: <a
+        href="mailto:unswfrc@gmail.com"
+        class="transition ease-out hover:text-gray-60 underline underline-offset-1"
+        >unswfrc@gmail.com</a
+      >
+    </p>
+    <p class="p-5 rounded-full bg-red-200 text-red-100">
+      Want to join? <a
+        href="/join"
+        class="transition ease-out hover:text-red-60 underline underline-offset-1"
+        >Click here</a
+      >.
+    </p>
+    <div class="flex gap-3 text-2xl">
+      <FooterSocial
+        href="https://www.facebook.com/UNSW-Experimental-Mayhem-Unit-4729-276775795795106/"
+        icon="fa-brands fa-facebook"
+      />
+      <FooterSocial
+        href="https://twitter.com/emu4729"
+        icon="fa-brands fa-twitter"
+      />
+      <FooterSocial
+        href="https://www.youtube.com/channel/UCdDO4B2-yXo0001waWUc0xw"
+        icon="fa-brands fa-youtube"
+      />
+      <FooterSocial
+        href="https://www.instagram.com/emu4729/"
+        icon="fa-brands fa-instagram"
+      />
+      <FooterSocial
+        href="https://github.com/emu4729"
+        icon="fa-brands fa-github"
+      />
+    </div>
+  </div>
+</Layout>

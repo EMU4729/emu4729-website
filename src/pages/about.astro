@@ -1,0 +1,96 @@
+---
+import { Image } from "@astrojs/image/components";
+import awardsImage from "../assets/photos/awards.jpg";
+import teamImage from "../assets/photos/team-2020.jpg";
+import AboutTimelineItem from "../components/AboutTimelineItem.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About | EMU 4729">
+  <!-- GENERAL SECTION -->
+  <section
+    class="mt-10 flex flex-col items-center gap-3 px-5 md:px-0 md:max-w-[50%] mx-auto text-center fade-in-up"
+  >
+    <h1 class="font-bold text-3xl">About EMU 4729</h1>
+    <h3 class="text-lg">
+      We are a team of appoximately 30+ students who compete in FIRST robotic
+      competitions. We have a group of mentors who help us along the way with
+      building robots.
+    </h3>
+    <Image src={teamImage} alt="team photo" />
+  </section>
+
+  <!-- TIMELINE SECTION -->
+  <section
+    class="mt-5 flex flex-col items-center gap-3 px-5 md:px-0 md:max-w-[50%] mx-auto text-center"
+  >
+    <h1 class="font-bold text-3xl fade-in-up">Our History</h1>
+    <div
+      class="border-l-2 border-dotted border-gray-80 pl-3 w-full flex flex-col gap-3"
+    >
+      <AboutTimelineItem time="2012" title="Founded">
+        We started in 2012 and at that time there where only 4 mentors and 8
+        students. Our Robot that year was made out of completely MDF. This year
+        was completely for training and we didn't complete.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2013" title="First Comp">
+        We started in 2012 and at that time there where only 4 mentors and 8
+        students. Our Robot that year was made out of completely MDF. This year
+        was completely for training and we didn't complete.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2016" title="GERRIC Courses">
+        July 2016, we started hosting GERRIC courses. Where we teach younger
+        kids about robotics (CAD, elec, mechanical and coding). That year we
+        also hosted a libary course for early-highschool students interested in
+        Robotics.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2016" title="First FRC Award">
+        2016, was our first big year as we won The Judges Award in FRC. As in
+        FRC we won our first award for our grappling hook. We also won the
+        Motivate Award in 2016.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2017" title="Team Growth">
+        In 2017 we grew from 6 students in 2012 to over 20 students.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2018" title="Gracious Professionalism Award">
+        In 2018 we won the Gracious Professionalism Award at DDU2018, as we
+        helped other teams.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2019" title="Junior Team Formed">
+        In April 2019, we started an FLL and an FLL Junior team, with 20
+        students joining in the first meeting.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2019" title="Junior Team Demonstration">
+        In July 2019, the FLL Junior team participated in a demonstration,
+        receiving a Synergy award.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2019" title="First FLL Comp">
+        In November 2019, our two FLL teams came 2nd and 4th in the first
+        regional competition.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2020" title="More Team Growth">
+        During 2020, the team had grown to over 30 students in the FRC team
+        alone.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2020" title="Robotics Workshops">
+        In January 2020, we held robotics workshop for high school students.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2021" title="FLL APOC Participation">
+        In 2021, our FLL team was wildcarded into the FLL Asia-Pacific Oceania
+        Competition, in which we participated.
+      </AboutTimelineItem>
+      <AboutTimelineItem time="2022" title="Victory at DDU2022">
+        In 2022, our FRC team, along with our alliance partners, won the DDU2022
+        playoffs.
+      </AboutTimelineItem>
+    </div>
+  </section>
+
+  <!-- AWARDS SECTION -->
+  <section
+    class="p-5 flex flex-col items-center gap-3 px-5 md:px-0 md:max-w-[50%] mx-auto text-center fade-in-up"
+  >
+    <h1 class="font-bold text-3xl">Awards</h1>
+    <Image src={awardsImage} alt="awards" />
+  </section>
+</Layout>

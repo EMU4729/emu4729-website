@@ -1,0 +1,18 @@
+---
+import GalleryYearPreview from "../components/GalleryYearPreview.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Gallery | EMU 4729">
+  <section
+    class="mt-10 flex flex-col items-center gap-3 px-5 md:px-0 md:max-w-[50%] mx-auto text-center fade-in-up"
+  >
+    <h1 class="font-bold text-3xl">Gallery</h1>
+    <h3 class="text-lg">
+      A collection of photos from team meetings and competitions.
+    </h3>
+  </section>
+  <section class="mt-5 flex flex-col gap-3 px-5 md:px-36">
+    <GalleryYearPreview year="2019" image="../assets/photos/team-2020.jpg" />
+  </section>
+</Layout>

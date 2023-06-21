@@ -1,0 +1,155 @@
+---
+import InlineLink from "../components/InlineLink.astro";
+import PrimaryButton from "../components/PrimaryButton.astro";
+import SecondaryButton from "../components/SecondaryButton.astro";
+import SkillCard from "../components/SkillCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home | EMU 4729">
+  <!-- HERO SECTION-->
+  <section
+    class="min-h-[60vh] text-white flex flex-col place-content-center text-center hero-bg"
+  >
+    <div class="self-center max-w-2xl flex flex-col gap-3 fade-in-up">
+      <h1 class="text-6xl font-heading font-bold">emu robotics</h1>
+      <h3 class="text-lg">
+        We are EMU Robotics, an Australian robotics school and team based in <InlineLink
+          href="https://www.unsw.edu.au"
+        >
+          UNSW
+        </InlineLink>. EMU competes in <InlineLink
+          href="https://firstaustralia.org/programs/first-robotics-competition/"
+        >
+          FIRST Robotics Competition
+        </InlineLink> and <InlineLink
+          href="https://firstaustralia.org/programs/first-lego-league/"
+        >
+          FIRST Lego League
+        </InlineLink>.
+      </h3>
+      <h3 class="text-lg font-bold">
+        Welcoming school students of any experience level.
+      </h3>
+      <div class="flex justify-center gap-2">
+        <PrimaryButton href="/join">Join Us</PrimaryButton>
+        <SecondaryButton href="#about">Learn More</SecondaryButton>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGLINE SECTION -->
+  <section
+    id="about"
+    class="bg-red-100 text-white py-10 px-5 flex flex-col text-center"
+  >
+    <div class="self-center max-w-4xl flex flex-col gap-5 fade-in-up">
+      <h1 class="font-bold text-4xl">
+        Propelling young people into engineering by facilitating STEM learning
+      </h1>
+      <h3 class="font-bold text-2xl">
+        40 High School Students + 10 Weeks = 1 Competitive Robot
+      </h3>
+    </div>
+  </section>
+
+  <!-- SKILL AREAS SECTION -->
+  <section class="mt-10 px-5 md:px-36 flex flex-col gap-2">
+    <h1 class="font-bold text-3xl">Skill Areas</h1>
+    <h3 class="text-lg text-gray-40">
+      Building a robot requires a wide range of skillsets, all of which you'll
+      have a chance to participate in. <em>You don't need any exprience;</em> our
+      mentors are here to develop your skills.
+    </h3>
+  </section>
+
+  <div class="mt-5 px-5 flex flex-col gap-3 fade-in-up">
+    <SkillCard
+      title="Computer-Aided Design (CAD)"
+      image="../assets/photos/cad-1.jpg"
+    >
+      <i class="fa fa-file-pen" slot="icon"></i>
+      <span slot="description"
+        >The goal of the CAD sub-team is to create digital models of our robots
+        using Autodesk Inventor software. We use these designs to create
+        prototypes of our ideas and finally use them to manufacture parts for
+        our robot through machines such as 3D Printers, laser cutters and CNC
+        Mills.</span
+      >
+    </SkillCard>
+    <SkillCard title="Mechanical" image="../assets/photos/build-4.jpg">
+      <i class="fa fa-hammer" slot="icon"></i>
+      <span slot="description"
+        >The mechanical team builds the robot and replicates the designs that
+        the CAD team made. Due to the small nature of our team, there is a large
+        overlap between the mechanical and CAD teams. They use tools like laser
+        printers, 3D printers and some hand tools to create the robot.
+      </span>
+    </SkillCard>
+    <SkillCard title="Software" image="../assets/photos/code.jpg">
+      <i class="fa fa-code" slot="icon"></i>
+      <span slot="description"
+        >The software team focuses on developing the code that makes the robot
+        work. It is often the smallest group as there is a limited number of
+        computers and people who can code well. There are also less people who
+        are interested in coding in general.</span
+      >
+    </SkillCard>
+    <SkillCard title="Electrical" image="../assets/photos/elec.jpg">
+      <i class="fa fa-bolt" slot="icon"></i>
+      <span slot="description"
+        >The electrical team focuses on the electrical components and wiring of
+        the robot where you will learn soldering and wiring skills. This is what
+        connects the code to the mechanical parts of the robot.
+      </span>
+    </SkillCard>
+    <SkillCard title="Media" image="../assets/photos/team-shirt.jpg">
+      <i class="fa fa-camera" slot="icon"></i>
+      <span slot="description"
+        >The media team is focused on the promotion and outreach. They take
+        photos at other competitions and build/update the website.</span
+      >
+    </SkillCard>
+  </div>
+
+  <!-- AGE DEMOGRAPHICS SECTION -->
+  <section
+    class="my-10 px-5 md:px-36 flex flex-col items-center text-center gap-3 fade-in-up"
+  >
+    <h1 class="font-bold text-3xl">Who it's for</h1>
+    <div class="flex gap-3">
+      <div
+        class="border-[1px] border-gray-70 rounded-lg p-3 flex flex-col items-center gap-1"
+      >
+        <h2 class="font-bold text-xl">Junior Group</h2>
+        <h3 class="text-lg text-gray-40">Years 5-8 (Ages 10-14)</h3>
+        <h3 class="text-lg text-gray-40">Thursdays 6:30 PM to 8:30 PM</h3>
+      </div>
+      <div
+        class="border-[1px] border-gray-70 rounded-lg p-3 flex flex-col items-center gap-1"
+      >
+        <h2 class="font-bold text-xl">Senior Group</h2>
+        <h3 class="text-lg text-gray-40">Years 9-12 (Ages 14+)</h3>
+        <h3 class="text-lg text-gray-40">Mondays 4:30 PM to 8:30 PM</h3>
+      </div>
+    </div>
+    <h3 class="text-lg text-gray-40">
+      <strong>Location:</strong> UNSW School of Electrical Engineering Lab G14
+    </h3>
+    <PrimaryButton href="/join">Join Us</PrimaryButton>
+  </section>
+
+  <!-- MAP SECTION -->
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.905712724222!2d151.22946261534418!3d-33.917826180642635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b18a49200f77%3A0x22ef11c818e4830!2sSchool%20of%20Electrical%20Engineering%20and%20Telecommunications!5e0!3m2!1sen!2sau!4v1657507239460!5m2!1sen!2sau"
+    class="border-0 w-full min-h-[50vh]"
+    allowfullscreen={false}
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</Layout>
+
+<style>
+  .hero-bg {
+    background: url("../assets/photos/game-6-darkened.jpg");
+    background-size: cover;
+  }
+</style>
