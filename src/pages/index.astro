@@ -4,6 +4,12 @@ import PrimaryButton from "../components/PrimaryButton.astro";
 import SecondaryButton from "../components/SecondaryButton.astro";
 import SkillCard from "../components/SkillCard.astro";
 import Layout from "../layouts/Layout.astro";
+
+import mechImage from "../assets/photos/build-4.jpg";
+import cadImage from "../assets/photos/cad-1.jpg";
+import codeImage from "../assets/photos/code.jpg";
+import elecImage from "../assets/photos/elec.jpg";
+import shirtImage from "../assets/photos/team-shirt.jpg";
 ---
 
 <Layout title="Home | EMU 4729">
@@ -11,22 +17,34 @@ import Layout from "../layouts/Layout.astro";
   <section
     class="min-h-[60vh] text-white flex flex-col place-content-center text-center hero-bg"
   >
-    <div class="self-center max-w-2xl flex flex-col gap-3 fade-in-up">
-      <h1 class="text-6xl font-heading font-bold">emu robotics</h1>
+    <div
+      class="self-center max-w-2xl flex flex-col gap-4 fade-in-up p-5 rounded-lg bg-white bg-opacity-40 backdrop-blur-lg"
+    >
+      <!-- this is uppercase because the font looks weird with correct casing -->
+      <h1 class="text-6xl font-heading font-bold drop-shadow">EMU ROBOTICS</h1>
       <h3 class="text-lg">
-        We are EMU Robotics, an Australian robotics school and team based in <InlineLink
-          href="https://www.unsw.edu.au"
-        >
-          UNSW
-        </InlineLink>. EMU competes in <InlineLink
-          href="https://firstaustralia.org/programs/first-robotics-competition/"
-        >
-          FIRST Robotics Competition
-        </InlineLink> and <InlineLink
-          href="https://firstaustralia.org/programs/first-lego-league/"
-        >
-          FIRST Lego League
-        </InlineLink>.
+        We are EMU Robotics, an Australian robotics school and team based in
+
+        <!--
+            we need these prettier-ignore statements because astro (for some reason)
+            inserts a space in generated markup on every new line, and prettier
+            auto-newlines long lines so it sucks
+
+            if you don't get what i mean, just remove the prettier-ignore's (and reformat) and you'll see
+          -->
+
+        <!-- prettier-ignore -->
+        <InlineLink href="https://www.unsw.edu.au">UNSW</InlineLink>. EMU
+        competes in the
+
+        <!-- prettier-ignore -->
+        <InlineLink href="https://firstaustralia.org/programs/first-robotics-competition/"
+          >FIRST Robotics Competition</InlineLink>
+        and the
+
+        <!-- prettier-ignore -->
+        <InlineLink href="https://firstaustralia.org/programs/first-lego-league/"
+          >FIRST Lego League</InlineLink>.
       </h3>
       <h3 class="text-lg font-bold">
         Welcoming school students of any experience level.
@@ -48,7 +66,7 @@ import Layout from "../layouts/Layout.astro";
         Propelling young people into engineering by facilitating STEM learning
       </h1>
       <h3 class="font-bold text-2xl">
-        40 High School Students + 10 Weeks = 1 Competitive Robot
+        Enthusiastic Students + 10 Weeks = 1 Competitive Robot
       </h3>
     </div>
   </section>
@@ -56,18 +74,15 @@ import Layout from "../layouts/Layout.astro";
   <!-- SKILL AREAS SECTION -->
   <section class="mt-10 px-5 md:px-36 flex flex-col gap-2">
     <h1 class="font-bold text-3xl">Skill Areas</h1>
-    <h3 class="text-lg text-gray-40">
+    <h3 class="text-xl text-gray-40">
       Building a robot requires a wide range of skillsets, all of which you'll
-      have a chance to participate in. <em>You don't need any exprience;</em> our
-      mentors are here to develop your skills.
+      have a chance to learn. <em>You don't need any prior experience;</em> our mentors
+      are here to develop your skills.
     </h3>
   </section>
 
   <div class="mt-5 px-5 flex flex-col gap-3 fade-in-up">
-    <SkillCard
-      title="Computer-Aided Design (CAD)"
-      image="../assets/photos/cad-1.jpg"
-    >
+    <SkillCard title="Computer-Aided Design (CAD)" image={cadImage}>
       <i class="fa fa-file-pen" slot="icon"></i>
       <span slot="description"
         >The goal of the CAD sub-team is to create digital models of our robots
@@ -77,7 +92,7 @@ import Layout from "../layouts/Layout.astro";
         Mills.</span
       >
     </SkillCard>
-    <SkillCard title="Mechanical" image="../assets/photos/build-4.jpg">
+    <SkillCard title="Mechanical" image={mechImage}>
       <i class="fa fa-hammer" slot="icon"></i>
       <span slot="description"
         >The mechanical team builds the robot and replicates the designs that
@@ -86,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
         printers, 3D printers and some hand tools to create the robot.
       </span>
     </SkillCard>
-    <SkillCard title="Software" image="../assets/photos/code.jpg">
+    <SkillCard title="Software" image={codeImage}>
       <i class="fa fa-code" slot="icon"></i>
       <span slot="description"
         >The software team focuses on developing the code that makes the robot
@@ -95,7 +110,7 @@ import Layout from "../layouts/Layout.astro";
         are interested in coding in general.</span
       >
     </SkillCard>
-    <SkillCard title="Electrical" image="../assets/photos/elec.jpg">
+    <SkillCard title="Electrical" image={elecImage}>
       <i class="fa fa-bolt" slot="icon"></i>
       <span slot="description"
         >The electrical team focuses on the electrical components and wiring of
@@ -103,7 +118,7 @@ import Layout from "../layouts/Layout.astro";
         connects the code to the mechanical parts of the robot.
       </span>
     </SkillCard>
-    <SkillCard title="Media" image="../assets/photos/team-shirt.jpg">
+    <SkillCard title="Media" image={shirtImage}>
       <i class="fa fa-camera" slot="icon"></i>
       <span slot="description"
         >The media team is focused on the promotion and outreach. They take
@@ -121,20 +136,21 @@ import Layout from "../layouts/Layout.astro";
       <div
         class="border-[1px] border-gray-70 rounded-lg p-3 flex flex-col items-center gap-1"
       >
-        <h2 class="font-bold text-xl">Junior Group</h2>
+        <h2 class="font-bold text-xl">Junior Team (FLL)</h2>
         <h3 class="text-lg text-gray-40">Years 5-8 (Ages 10-14)</h3>
-        <h3 class="text-lg text-gray-40">Thursdays 6:30 PM to 8:30 PM</h3>
+        <h3 class="text-lg text-gray-40">Mondays 6:30 PM to 8:30 PM</h3>
       </div>
       <div
         class="border-[1px] border-gray-70 rounded-lg p-3 flex flex-col items-center gap-1"
       >
-        <h2 class="font-bold text-xl">Senior Group</h2>
+        <h2 class="font-bold text-xl">Senior Team (FRC)</h2>
         <h3 class="text-lg text-gray-40">Years 9-12 (Ages 14+)</h3>
-        <h3 class="text-lg text-gray-40">Mondays 4:30 PM to 8:30 PM</h3>
+        <h3 class="text-lg text-gray-40">Wednesdays 4:30 PM to 8:30 PM</h3>
       </div>
     </div>
     <h3 class="text-lg text-gray-40">
-      <strong>Location:</strong> UNSW School of Electrical Engineering Lab G14
+      <strong>Location:</strong> Lab G14, UNSW School of Electrical Engineering and
+      Telecommunications
     </h3>
     <PrimaryButton href="/join">Join Us</PrimaryButton>
   </section>

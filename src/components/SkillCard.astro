@@ -3,7 +3,7 @@ import { Image } from "@astrojs/image/components";
 
 export interface Props {
   title: string;
-  image: string;
+  image: ImageMetadata;
 }
 
 const { title, image } = Astro.props as Props;
@@ -13,7 +13,7 @@ const { title, image } = Astro.props as Props;
   class="border-[1px] border-gray-70 rounded-lg flex flex-col md:flex-row self-center min-h-56 max-w-4xl fade-in-up"
 >
   <Image
-    src={import(image)}
+    src={image}
     alt={title}
     class="rounded-lg md:aspect-square object-cover md:w-1/3"
   />

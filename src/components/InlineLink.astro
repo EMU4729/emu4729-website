@@ -6,6 +6,7 @@ export interface Props {
 const { href } = Astro.props as Props;
 ---
 
-<a href={href} class="transition ease-out text-red-100 hover:text-red-80">
-  <slot />
-</a>
+<a
+  href={href}
+  class="transition ease-out font-bold underline hover:text-red-200"><slot /></a
+>

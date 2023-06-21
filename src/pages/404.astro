@@ -4,12 +4,15 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="404 | EMU 4729">
-  <section class="py-10 px-5 md:px-36 flex flex-col gap-2">
-    <h1 class="text-5xl">Whoops!</h1>
-    <h3 class="text-3xl">Error 404</h3>
-    <p class="text-xl">
-      Looks like the page you were trying to find doesn't exist.
-    </p>
-    <PrimaryButton href="/">Go Home</PrimaryButton>
-  </section>
+  <div class="flex w-full justify-center text-center">
+    <section class="py-10 px-5 max-w-4xl flex flex-col gap-4">
+      <h3 class="text-5xl font-bold">Error 404</h3>
+      <p class="text-3xl">
+        Looks like the page you were trying to find doesn't exist.
+      </p>
+      <span class="justify-self-center pt-2">
+        <PrimaryButton href="/">Go Home</PrimaryButton>
+      </span>
+    </section>
+  </div>
 </Layout>
