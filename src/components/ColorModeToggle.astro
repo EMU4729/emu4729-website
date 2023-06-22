@@ -1,0 +1,64 @@
+<button id="color-mode-button" class="mt-2 md:mt-0"
+  ><i id="color-mode-indicator" class="fa-solid fa-sun"></i></button
+>
+
+<script>
+  const key = "theme";
+  const indicator = document.getElementById("color-mode-indicator");
+  const button = document.getElementById("color-mode-button");
+
+  const getColorMode = () => {
+    if (localStorage[key] === "dark") return "dark";
+    if (key in localStorage) return "light";
+    return "system";
+  };
+
+  const applyColorMode = () => {
+    switch (getColorMode()) {
+      case "light":
+        document.documentElement.classList.remove("dark");
+        indicator.className = "fa-solid fa-sun";
+        button.title = "Light Mode";
+        break;
+      case "dark":
+        document.documentElement.classList.add("dark");
+        indicator.className = "fa-solid fa-moon";
+        button.title = "Dark Mode";
+        break;
+      case "system":
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+        indicator.className = "fa-solid fa-bolt";
+        button.title = "System Color Mode";
+        break;
+    }
+  };
+
+  const updateColorMode = (setting: string) => {
+    if (setting === "system") {
+      localStorage.removeItem(key);
+    } else {
+      localStorage[key] = setting;
+    }
+    applyColorMode();
+  };
+
+  button.onclick = () => {
+    switch (getColorMode()) {
+      case "system":
+        updateColorMode("light");
+        break;
+      case "light":
+        updateColorMode("dark");
+        break;
+      case "dark":
+        updateColorMode("system");
+        break;
+    }
+  };
+
+  applyColorMode();
+</script>

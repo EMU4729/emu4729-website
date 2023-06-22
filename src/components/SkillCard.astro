@@ -10,7 +10,7 @@ const { title, image } = Astro.props as Props;
 ---
 
 <div
-  class="border-[1px] border-gray-70 rounded-lg flex flex-col md:flex-row self-center min-h-56 max-w-4xl fade-in-up"
+  class="border-[1px] border-gray-70 dark:border-gray-30 rounded-lg flex flex-col md:flex-row self-center min-h-56 max-w-4xl fade-in-up"
 >
   <Image
     src={image}
@@ -22,7 +22,7 @@ const { title, image } = Astro.props as Props;
       <slot name="icon" />
     </span>
     <h3 class="font-bold text-2xl">{title}</h3>
-    <p class="text-md text-gray-40">
+    <p class="text-md text-gray-40 dark:text-gray-70">
       <slot name="description" />
     </p>
   </div>

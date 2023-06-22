@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,svelte}"],
+  darkMode: "class",
   theme: {
     colors: {
-      yellow: "#ffdc00",
       white: "#fff",
       black: "#000",
       gray: {
