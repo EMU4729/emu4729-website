@@ -12,7 +12,7 @@ import elecImage from "../assets/photos/elec.jpg";
 import shirtImage from "../assets/photos/team-shirt.jpg";
 ---
 
-<Layout title="Home | EMU 4729">
+<Layout title="Home | EMU Robotics">
   <!-- HERO SECTION-->
   <section
     class="min-h-[60vh] text-white flex flex-col place-content-center text-center hero-bg"
@@ -23,7 +23,7 @@ import shirtImage from "../assets/photos/team-shirt.jpg";
       <!-- this is uppercase because the font looks weird with correct casing -->
       <h1 class="text-6xl font-heading font-bold drop-shadow">EMU ROBOTICS</h1>
       <h3 class="text-lg">
-        We are EMU Robotics, an Australian robotics school and team based in
+        We are EMU Robotics, an Australian robotics team housed in
 
         <!--
             we need these prettier-ignore statements because astro (for some reason)
@@ -34,13 +34,13 @@ import shirtImage from "../assets/photos/team-shirt.jpg";
           -->
 
         <!-- prettier-ignore -->
-        <InlineLink href="https://www.unsw.edu.au">UNSW</InlineLink>. EMU
-        competes in the
+        <InlineLink href="https://www.unsw.edu.au">UNSW</InlineLink>. 
+        EMU competes in the
 
         <!-- prettier-ignore -->
         <InlineLink href="https://firstaustralia.org/programs/first-robotics-competition/"
           >FIRST Robotics Competition</InlineLink>
-        and the
+        and
 
         <!-- prettier-ignore -->
         <InlineLink href="https://firstaustralia.org/programs/first-lego-league/"
@@ -75,55 +75,59 @@ import shirtImage from "../assets/photos/team-shirt.jpg";
   <section class="mt-10 px-5 md:px-36 flex flex-col gap-2">
     <h1 class="font-bold text-3xl">Skill Areas</h1>
     <h3 class="text-xl text-gray-40 dark:text-gray-70">
-      Building a robot requires a wide range of skillsets, all of which you'll
-      have a chance to learn. <em>You don't need any prior experience;</em> our mentors
+      Building a robot requires a wide range of skills, all of which you'll
+      have a chance to learn. <em>You do not need any prior experience;</em> our mentors
       are here to develop your skills.
     </h3>
   </section>
 
   <div class="mt-5 px-5 flex flex-col gap-3 fade-in-up">
-    <SkillCard title="Computer-Aided Design (CAD)" image={cadImage}>
+    <SkillCard title="Computer Aided Design (CAD)" image={cadImage}>
       <i class="fa fa-file-pen" slot="icon"></i>
       <span slot="description"
         >The goal of the CAD sub-team is to create digital models of our robots
-        using Autodesk Inventor software. We use these designs to create
-        prototypes of our ideas and finally use them to manufacture parts for
-        our robot through machines such as 3D Printers, laser cutters and CNC
-        Mills.</span
-      >
+        and other important components. We use these designs to create
+        prototypes of our ideas. Occasionally, we 3D print or laser cut our 
+        CADed components for use on our robot. Eventually, we would like to use 
+        our CAD models to manufacture parts using more advanced methods like 
+        CNC milling.
+      </span>
     </SkillCard>
     <SkillCard title="Mechanical" image={mechImage}>
       <i class="fa fa-hammer" slot="icon"></i>
       <span slot="description"
-        >The mechanical team builds the robot and replicates the designs that
-        the CAD team made. Due to the small nature of our team, there is a large
-        overlap between the mechanical and CAD teams. They use tools like laser
-        printers, 3D printers and some hand tools to create the robot.
+        >The mechanical sub-team builds the robot using the models that
+        our CAD team made. Due to the small nature of our team, there is a large
+        overlap between the mechanical and CAD sub-teams. Typically, a majority 
+        of our robot is built manually with hand tools. There is a plus side -
+        students learn hands-on skills. However, methods like CNC milling are
+        far more accurate and take far less time.
       </span>
     </SkillCard>
     <SkillCard title="Software" image={codeImage}>
       <i class="fa fa-code" slot="icon"></i>
       <span slot="description"
-        >The software team focuses on developing the code that makes the robot
-        work. It is often the smallest group as there is a limited number of
-        computers and people who can code well. There are also less people who
-        are interested in coding in general.</span
-      >
+        >The software sub-team focuses on developing the code that drives our 
+        robot. Sadly, it is often the smallest team as many students think
+        they could never code. We would like to change that perception.</span>
     </SkillCard>
     <SkillCard title="Electrical" image={elecImage}>
       <i class="fa fa-bolt" slot="icon"></i>
       <span slot="description"
-        >The electrical team focuses on the electrical components and wiring of
-        the robot where you will learn soldering and wiring skills. This is what
-        connects the code to the mechanical parts of the robot.
+        >The electrical sub-team focuses on the electrical components and wiring 
+        of the robot. Skills taught include soldering and wiring skills. 
+        Electrical bridges the gap between code and mechanical. Always have to
+        be cautious electrical is not left for the end!
       </span>
     </SkillCard>
     <SkillCard title="Media" image={shirtImage}>
       <i class="fa fa-camera" slot="icon"></i>
       <span slot="description"
-        >The media team is focused on the promotion and outreach. They take
-        photos at other competitions and build/update the website.</span
-      >
+        >Being on a robotics team is not soley about the robots. The media 
+        sub-team is focused on the promotion and outreach of our team. They take
+        photos at the events we attend and maintain our internet presence. They
+        are also involved with obtaining sponsorship for our team.
+        </span>
     </SkillCard>
   </div>
 
@@ -133,6 +137,17 @@ import shirtImage from "../assets/photos/team-shirt.jpg";
   >
     <h1 class="font-bold text-3xl">Who it's for</h1>
     <div class="flex gap-3">
+      <div
+      class="border-[1px] border-gray-70 dark:border-gray-30 rounded-lg p-3 flex flex-col items-center gap-1"
+    >
+      <h2 class="font-bold text-xl">EMU Chicks</h2>
+      <h3 class="text-lg text-gray-40 dark:text-gray-70">
+        Years 2-5 (Ages 7-10)
+      </h3>
+      <h3 class="text-lg text-gray-40 dark:text-gray-70">
+        Mondays 4:30 PM to 6:30 PM
+      </h3>
+    </div>
       <div
         class="border-[1px] border-gray-70 dark:border-gray-30 rounded-lg p-3 flex flex-col items-center gap-1"
       >
@@ -149,7 +164,7 @@ import shirtImage from "../assets/photos/team-shirt.jpg";
       >
         <h2 class="font-bold text-xl">Senior Team (FRC)</h2>
         <h3 class="text-lg text-gray-40 dark:text-gray-70">
-          Years 9-12 (Ages 14+)
+          Years 8-12 (Ages 14+)
         </h3>
         <h3 class="text-lg text-gray-40 dark:text-gray-70">
           Wednesdays 4:30 PM to 8:30 PM

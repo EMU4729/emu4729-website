@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://emu4729-website.vercel.app", // TODO: Change to new domain once deployed
+  site: "https://first.unsw.edu.au", // TODO: Change to new domain once deployed
   integrations: [
     image(),
     tailwind({
