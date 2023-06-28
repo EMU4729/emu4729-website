@@ -5,11 +5,19 @@ import SecondaryButton from "../components/SecondaryButton.astro";
 import SkillCard from "../components/SkillCard.astro";
 import Layout from "../layouts/Layout.astro";
 
+import { getImage } from "@astrojs/image";
 import mechImage from "../assets/photos/build-4.jpg";
 import cadImage from "../assets/photos/cad-1.jpg";
 import codeImage from "../assets/photos/code.jpg";
 import elecImage from "../assets/photos/elec.jpg";
+import heroImage from "../assets/photos/game-6-darkened.jpg";
 import shirtImage from "../assets/photos/team-shirt.jpg";
+
+const heroSrc = `url(${await getImage({
+  src: heroImage,
+  alt: "EMU 4729 robot in game",
+  format: "webp",
+}).then((image) => image.src)})`;
 ---
 
 <Layout title="Home | EMU Robotics">
@@ -188,9 +196,9 @@ import shirtImage from "../assets/photos/team-shirt.jpg";
     referrerpolicy="no-referrer-when-downgrade"></iframe>
 </Layout>
 
-<style>
+<style define:vars={{ heroSrc }}>
   .hero-bg {
-    background: url("../assets/photos/game-6-darkened.jpg");
+    background: var(--heroSrc);
     background-size: cover;
   }
 </style>
