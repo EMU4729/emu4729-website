@@ -15,6 +15,7 @@ const { title, image } = Astro.props as Props;
   <Image
     src={image}
     alt={title}
+    format="webp"
     class="aspect-square object-cover sk-image-width"
     aspectRatio={1}
   />

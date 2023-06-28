@@ -21,6 +21,7 @@ const { year, image } = Astro.props as Props;
   </div>
   <Image
     src={import(image)}
+    format="webp"
     alt={`${year} photo`}
     class="rounded-lg object-cover h-52"
   />

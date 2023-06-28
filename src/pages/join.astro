@@ -6,11 +6,11 @@ import Layout from "../layouts/Layout.astro";
   <div class="mt-10 px-5 flex flex-col items-center text-center gap-3">
     <h1 class="font-bold text-4xl">Join The Team</h1>
     <h3 class="text-gray-40 dark:text-gray-70 text-xl">
-      We are always looking for students, no experience required! You
-      will be contacted as soon as possible.
+      We are always looking for students, no experience required! You will be
+      contacted as soon as possible.
     </h3>
     <iframe
-      id="form"
+      id="join-form"
       title="EMU Robotics Sign-Up Form"
       src="https://docs.google.com/forms/d/e/1FAIpQLScBhvFmN4Wd9UD1oJxSmIoadXebrb8_LSsQb7BBmxyywhjkrQ/viewform?embedded=true"
       height={800}
@@ -21,8 +21,10 @@ import Layout from "../layouts/Layout.astro";
 
 <script>
   // form iframe autosizing - a simple hack from https://stackoverflow.com/a/247160/1033660
-  const form = document.getElementById("form");
+  const form = document.getElementById("join-form");
   form.onload = () => {
-    form.style.height = document.body.offsetHeight + "px";
+    setTimeout(() => {
+      form.style.height = form.scrollHeight + "px";
+    }, 500);
   };
 </script>
