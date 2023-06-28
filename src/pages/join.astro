@@ -1,30 +1,21 @@
 ---
+import PrimaryButton from "../components/PrimaryButton.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Join | EMU Robotics">
-  <div class="mt-10 px-5 flex flex-col items-center text-center gap-3">
+  <div
+    class="px-5 flex flex-col grow items-center justify-center text-center gap-3"
+  >
     <h1 class="font-bold text-4xl">Join The Team</h1>
     <h3 class="text-gray-40 dark:text-gray-70 text-xl">
       We are always looking for students, no experience required! You will be
       contacted as soon as possible.
     </h3>
-    <iframe
-      id="join-form"
-      title="EMU Robotics Sign-Up Form"
-      src="https://docs.google.com/forms/d/e/1FAIpQLScBhvFmN4Wd9UD1oJxSmIoadXebrb8_LSsQb7BBmxyywhjkrQ/viewform?embedded=true"
-      height={800}
-      class="w-full">Loading...</iframe
+    <PrimaryButton
+      href="https://docs.google.com/forms/d/e/1FAIpQLScBhvFmN4Wd9UD1oJxSmIoadXebrb8_LSsQb7BBmxyywhjkrQ/viewform?usp=sf_link"
     >
+      Fill out the form!
+    </PrimaryButton>
   </div>
 </Layout>
-
-<script>
-  // form iframe autosizing - a simple hack from https://stackoverflow.com/a/247160/1033660
-  const form = document.getElementById("join-form");
-  form.onload = () => {
-    setTimeout(() => {
-      form.style.height = form.scrollHeight + "px";
-    }, 500);
-  };
-</script>
