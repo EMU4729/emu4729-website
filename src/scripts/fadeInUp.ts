@@ -1,12 +1,10 @@
 const observer = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      setTimeout(() => {
-        entry.target.classList.add("in-view");
-      }, 100);
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add("in-view");
       observer.unobserve(entry.target);
-    });
+    }
   },
   {
     root: null,

@@ -1,0 +1,30 @@
+---
+import FooterSocial from "./FooterSocial.astro";
+
+export interface Props {
+  includeEmail?: boolean;
+}
+
+const { includeEmail = false } = Astro.props;
+---
+
+{
+  includeEmail && (
+    <FooterSocial href="mailto:unswfrc@gmail.com" icon="fa fa-envelope" />
+  )
+}
+<FooterSocial
+  href="https://www.facebook.com/UNSW-Experimental-Mayhem-Unit-4729-276775795795106/"
+  icon="fa-brands fa-facebook"
+/>
+<FooterSocial href="https://twitter.com/emu4729" icon="fa-brands fa-twitter" />
+<FooterSocial href="https://tiktok.com/@emu4729" icon="fa-brands fa-tiktok" />
+<FooterSocial
+  href="https://www.youtube.com/channel/UCdDO4B2-yXo0001waWUc0xw"
+  icon="fa-brands fa-youtube"
+/>
+<FooterSocial
+  href="https://www.instagram.com/emu4729/"
+  icon="fa-brands fa-instagram"
+/>
+<FooterSocial href="https://github.com/emu4729" icon="fa-brands fa-github" />

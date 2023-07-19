@@ -47,7 +47,7 @@
 
 @layer components {
   .fade-in-up {
-    @apply transition ease-out duration-500 translate-y-5 opacity-0;
+    @apply transition ease-out duration-500 delay-100 translate-y-5 opacity-0;
   }
 
   .fade-in-up.in-view {
