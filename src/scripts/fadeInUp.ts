@@ -15,7 +15,12 @@ const observer = new IntersectionObserver(
 window.addEventListener("DOMContentLoaded", () => {
   Array.from(document.getElementsByClassName("fade-in-up")).forEach(
     (element) => {
-      observer.observe(element);
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        // immediately show all elements
+        element.classList.add("in-view");
+      } else {
+        observer.observe(element);
+      }
     }
   );
 });

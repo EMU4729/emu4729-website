@@ -36,12 +36,35 @@
 
 /* Tailwind stuff */
 @layer base {
+  :root {
+    @apply dark:[color-scheme:dark];
+  }
+
   html {
     @apply scroll-smooth;
   }
 
   body {
     @apply font-body text-lg flex flex-col min-h-screen dark:bg-gray-10 dark:text-white;
+  }
+
+  /* axes all motion effects if user prefers reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      @apply scroll-auto;
+    }
+
+    *,
+    ::before,
+    ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
   }
 }
 

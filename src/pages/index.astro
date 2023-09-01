@@ -1,17 +1,17 @@
 ---
-import InlineLink from "../components/InlineLink.astro";
-import PrimaryButton from "../components/PrimaryButton.astro";
-import SecondaryButton from "../components/SecondaryButton.astro";
-import SkillCard from "../components/SkillCard.astro";
-import Layout from "../layouts/Layout.astro";
+import InlineLink from "@components/InlineLink.astro";
+import PrimaryButton from "@components/PrimaryButton.astro";
+import SecondaryButton from "@components/SecondaryButton.astro";
+import SkillCard from "@components/SkillCard.astro";
+import Layout from "@layouts/Layout.astro";
 
-import { getImage } from "@astrojs/image";
-import mechImage from "../assets/photos/build-4.jpg";
-import cadImage from "../assets/photos/cad-1.jpg";
-import codeImage from "../assets/photos/code.jpg";
-import elecImage from "../assets/photos/elec.jpg";
-import heroImage from "../assets/photos/game-6-darkened.jpg";
-import shirtImage from "../assets/photos/team-shirt.jpg";
+import mechImage from "@assets/photos/build-4.jpg";
+import cadImage from "@assets/photos/cad-1.jpg";
+import codeImage from "@assets/photos/code.jpg";
+import elecImage from "@assets/photos/elec.jpg";
+import heroImage from "@assets/photos/game-6-darkened.jpg";
+import shirtImage from "@assets/photos/team-shirt.jpg";
+import { getImage } from "astro:assets";
 
 const heroSrc = `url(${await getImage({
   src: heroImage,
@@ -48,7 +48,7 @@ const heroSrc = `url(${await getImage({
         <!-- prettier-ignore -->
         <InlineLink href="https://firstaustralia.org/programs/first-robotics-competition/"
           >FIRST Robotics Competition</InlineLink>
-        and
+         and
 
         <!-- prettier-ignore -->
         <InlineLink href="https://firstaustralia.org/programs/first-lego-league/"
@@ -84,8 +84,8 @@ const heroSrc = `url(${await getImage({
     <h1 class="font-bold text-3xl">Skill Areas</h1>
     <h3 class="text-xl text-gray-40 dark:text-gray-70">
       Building a robot requires a wide range of skills, all of which you'll have
-      a chance to learn. <em>You do not need any prior experience;</em> our mentors
-      are here to develop your skills.
+      a chance to learn. <em>You do not need any prior experience;</em> our
+      mentors are here to develop your skills.
     </h3>
   </section>
 
@@ -181,8 +181,8 @@ const heroSrc = `url(${await getImage({
       </div>
     </div>
     <h3 class="text-lg text-gray-40 dark:text-gray-70">
-      <strong>Location:</strong> Lab G14, UNSW School of Electrical Engineering and
-      Telecommunications
+      <strong>Location:</strong> Lab G14, UNSW School of Electrical Engineering
+      and Telecommunications
     </h3>
     <PrimaryButton href="/join">Join Us</PrimaryButton>
   </section>

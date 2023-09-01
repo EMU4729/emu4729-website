@@ -17,11 +17,13 @@
     switch (getColorMode()) {
       case "light":
         document.documentElement.classList.remove("dark");
+        document.documentElement.style.colorScheme = "light";
         indicator.className = "fa-solid fa-sun";
         button.title = "Light Mode";
         break;
       case "dark":
         document.documentElement.classList.add("dark");
+        document.documentElement.style.colorScheme = "dark";
         indicator.className = "fa-solid fa-moon";
         button.title = "Dark Mode";
         break;
@@ -31,6 +33,7 @@
         } else {
           document.documentElement.classList.remove("dark");
         }
+        document.documentElement.style.colorScheme = "light dark";
         indicator.className = "fa-solid fa-bolt";
         button.title = "System Color Mode";
         break;
