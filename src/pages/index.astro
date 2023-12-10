@@ -26,7 +26,7 @@ const heroSrc = `url(${await getImage({
     class="min-h-[60vh] text-white flex flex-col place-content-center text-center hero-bg"
   >
     <div
-      class="self-center max-w-2xl flex flex-col gap-4 fade-in-up p-5 rounded-lg bg-white dark:bg-black bg-opacity-40 dark:bg-opacity-40 backdrop-blur-lg"
+      class="self-center max-w-2xl flex flex-col gap-4 fade-in-up p-5 rounded-lg bg-black bg-opacity-40 backdrop-blur-lg"
     >
       <!-- this is uppercase because the font looks weird with correct casing -->
       <h1 class="text-6xl font-heading font-bold drop-shadow">EMU ROBOTICS</h1>
@@ -188,13 +188,28 @@ const heroSrc = `url(${await getImage({
   </section>
 
   <!-- MAP SECTION -->
-  <iframe
-    title="EMU Robotics on Google Maps"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.905712724222!2d151.22946261534418!3d-33.917826180642635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b18a49200f77%3A0x22ef11c818e4830!2sSchool%20of%20Electrical%20Engineering%20and%20Telecommunications!5e0!3m2!1sen!2sau!4v1657507239460!5m2!1sen!2sau"
-    class="border-0 w-full min-h-[50vh]"
-    allowfullscreen={false}
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- This gets lazily loaded by an IntersectionObserver (see below) -->
+  <div id="map-div"></div>
 </Layout>
+
+<script>
+  // Map lazy-load script
+  const mapDiv = document.getElementById("map-div");
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      const iframe = document.createElement("iframe");
+      iframe.title = "EMU Robotics on Google Maps";
+      iframe.src =
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.905712724222!2d151.22946261534418!3d-33.917826180642635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b18a49200f77%3A0x22ef11c818e4830!2sSchool%20of%20Electrical%20Engineering%20and%20Telecommunications!5e0!3m2!1sen!2sau!4v1657507239460!5m2!1sen!2sau";
+      iframe.className = "border-0 w-full min-h-[50vh]";
+      iframe.allowFullscreen = false;
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      mapDiv.appendChild(iframe);
+      observer.unobserve(mapDiv);
+    }
+  });
+  observer.observe(mapDiv);
+</script>
 
 <style define:vars={{ heroSrc }}>
   .hero-bg {
