@@ -23,9 +23,9 @@ import ColorModeToggle from "@components/ColorModeToggle.astro";
 
   <label>
     <input type="checkbox" id="hamburger" class="hidden" />
-    <a class="z-0 md:hidden cursor-pointer" rel="nofollow"
-      ><i class="fa-solid fa-bars"></i></a
-    >
+    <a class="z-0 md:hidden" rel="nofollow" role="button">
+      <i class="fa-solid fa-bars"></i>
+    </a>
   </label>
 
   <div
@@ -45,11 +45,5 @@ import ColorModeToggle from "@components/ColorModeToggle.astro";
   const hamburger = document.getElementById("hamburger");
   const links = document.getElementById("links");
 
-  hamburger.onclick = () => {
-    if (links.classList.contains("hidden")) {
-      links.classList.remove("hidden");
-    } else {
-      links.classList.add("hidden");
-    }
-  };
+  hamburger.onclick = () => links.classList.toggle("hidden");
 </script>

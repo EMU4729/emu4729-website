@@ -1,0 +1,15 @@
+---
+import {
+  Image,
+  type LocalImageProps,
+  type RemoteImageProps,
+} from "astro:assets";
+
+type Props = Omit<LocalImageProps | RemoteImageProps, "src"> & {
+  src: ImageMetadata;
+};
+
+const { src, ...props } = Astro.props;
+---
+
+<Image src={src} width={src.width / 2} densities={[1, 1.5, 2]} {...props} />

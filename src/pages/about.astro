@@ -2,8 +2,8 @@
 import awardsImage from "@assets/photos/awards.jpg";
 import teamImage from "@assets/photos/team-2020.jpg";
 import AboutTimelineItem from "@components/AboutTimelineItem.astro";
+import ResponsiveImage from "@components/ResponsiveImage.astro";
 import Layout from "@layouts/Layout.astro";
-import { Image } from "astro:assets";
 ---
 
 <Layout title="About | EMU Robotics">
@@ -16,7 +16,7 @@ import { Image } from "astro:assets";
       We are a team of students who compete in FIRST competitions and we have a
       group of mentors who help us along the way with building robots.
     </h3>
-    <Image src={teamImage} format="webp" alt="team photo" />
+    <ResponsiveImage src={teamImage} alt="team photo" />
   </section>
 
   <!-- TIMELINE SECTION -->
@@ -122,6 +122,6 @@ import { Image } from "astro:assets";
     class="p-5 flex flex-col items-center gap-3 px-5 md:px-0 md:max-w-[50%] mx-auto text-center fade-in-up"
   >
     <h1 class="font-bold text-3xl">Awards</h1>
-    <Image src={awardsImage} format="webp" alt="awards" />
+    <ResponsiveImage src={awardsImage} alt="awards" />
   </section>
 </Layout>

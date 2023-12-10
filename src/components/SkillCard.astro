@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import ResponsiveImage from "./ResponsiveImage.astro";
 
 export interface Props {
   title: string;
@@ -12,10 +12,9 @@ const { title, image } = Astro.props as Props;
 <div
   class="border-[1px] border-gray-70 dark:border-gray-30 rounded-lg overflow-hidden flex flex-col md:flex-row self-center min-h-56 max-w-4xl fade-in-up"
 >
-  <Image
+  <ResponsiveImage
     src={image}
     alt={title}
-    format="webp"
     class="aspect-square object-cover sk-image-width"
   />
   <div class="p-5 flex flex-col gap-1">
