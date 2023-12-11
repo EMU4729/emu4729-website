@@ -2,9 +2,12 @@
 export interface Props {
   icon: string;
   href: string;
+  label: string;
 }
 
-const { icon, href } = Astro.props as Props;
+const { icon, href, label } = Astro.props as Props;
 ---
 
-<a href={href} class="transition ease-out hover:text-red-100"><i class={icon} /></a>
+<a href={href} aria-label={label} class="transition ease-out hover:text-red-100"
+  ><i class={icon}></i></a
+>
