@@ -1,0 +1,58 @@
+---
+import ResponsiveImage from "@components/ResponsiveImage.astro";
+import Layout from "@layouts/Layout.astro";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: {
+      post,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { post } = Astro.props;
+const { title, date, description, image, imageAlt } = post.data;
+const { default: imageMeta } = image
+  ? await import(/* @vite-ignore */ image)
+  : { default: undefined };
+const { Content } = await post.render();
+---
+
+<Layout title={`${title} | EMU Robotics`}>
+  <div class="flex flex-col gap-1 px-5 mx-auto max-w-[65ch]">
+    <a href="/blog" class="underline text-gray-40 dark:text-gray-60">Back</a>
+    {
+      image && (
+        <ResponsiveImage
+          src={imageMeta}
+          alt={imageAlt}
+          class="rounded-md w-min self-center my-5 object-contain"
+        />
+      )
+    }
+    <p class="text-gray-40 dark:text-gray-60">
+      {
+        date.toLocaleDateString(undefined, {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })
+      }
+    </p>
+    <h1 class="font-bold text-xl md:text-3xl">{title}</h1>
+    <h2 class="text-lg md:text-2xl">{description}</h2>
+    <article class="prose dark:prose-invert md:prose-lg lg:prose-xl my-5">
+      <Content />
+    </article>
+  </div>
+</Layout>
