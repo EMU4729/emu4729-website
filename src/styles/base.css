@@ -1,44 +1,112 @@
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
+@import "tailwindcss";
 
-/* Fonts */
-@font-face {
-  font-family: "Glacial Indifference";
-  src: url("/fonts/glacial-indifference/GlacialIndifference-Regular.otf")
-    format("opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-*: initial;
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-gray-10: #191919;
+  --color-gray-20: #333333;
+  --color-gray-30: #4c4c4c;
+  --color-gray-40: #666666;
+  --color-gray-50: #808080;
+  --color-gray-60: #999999;
+  --color-gray-70: #b3b3b3;
+  --color-gray-80: #cccccc;
+  --color-gray-90: #e6e6e6;
+
+  --color-red-10: #190000;
+  --color-red-20: #330000;
+  --color-red-30: #4c0000;
+  --color-red-40: #660000;
+  --color-red-50: #800000;
+  --color-red-60: #990000;
+  --color-red-70: #b30000;
+  --color-red-80: #cc0000;
+  --color-red-90: #e60000;
+  --color-red-100: #ff0000;
+  --color-red-110: #ff1a1a;
+  --color-red-120: #ff3333;
+  --color-red-130: #ff4d4d;
+  --color-red-140: #ff4d4d;
+  --color-red-150: #ff6666;
+  --color-red-160: #ff8080;
+  --color-red-170: #ff9999;
+  --color-red-180: #ffb3b3;
+  --color-red-190: #ffcccc;
+  --color-red-200: #ffe6e6;
+
+  --font-*: initial;
+  --font-heading: Norwester, sans-serif;
+  --font-body: Glacial Indifference, sans-serif;
 }
 
-@font-face {
-  font-family: "Glacial Indifference";
-  src: url("/fonts/glacial-indifference/GlacialIndifference-Bold.otf")
-    format("opentype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: fallback;
+@utility fade-in-up {
+  @apply transition ease-out duration-500 delay-100 translate-y-5 opacity-0;
+
+  &.in-view {
+    @apply translate-y-0 opacity-100;
+  }
 }
 
-@font-face {
-  font-family: "Glacial Indifference";
-  src: url("/fonts/glacial-indifference/GlacialIndifference-Italic.otf")
-    format("opentype");
-  font-weight: normal;
-  font-style: italic;
-  font-display: fallback;
+@utility in-view {
+  &.fade-in-up {
+    @apply translate-y-0 opacity-100;
+  }
 }
 
-@font-face {
-  font-family: "Norwester";
-  src: url("/fonts/norwester/norwester.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-/* Tailwind stuff */
+@layer components {
+  /* Fonts */
+  @font-face {
+    font-family: "Glacial Indifference";
+    src: url("/fonts/glacial-indifference/GlacialIndifference-Regular.otf")
+      format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: "Glacial Indifference";
+    src: url("/fonts/glacial-indifference/GlacialIndifference-Bold.otf")
+      format("opentype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: "Glacial Indifference";
+    src: url("/fonts/glacial-indifference/GlacialIndifference-Italic.otf")
+      format("opentype");
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+  }
+
+  @font-face {
+    font-family: "Norwester";
+    src: url("/fonts/norwester/norwester.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+  }
+
+  /* Tailwind stuff */
+}
 @layer base {
   :root {
     @apply dark:[color-scheme:dark];
@@ -69,24 +137,5 @@
       transition-duration: 0s !important;
       transition-delay: 0s !important;
     }
-  }
-}
-
-@layer components {
-  .fade-in-up {
-    @apply transition ease-out duration-500 delay-100 translate-y-5 opacity-0;
-  }
-
-  .fade-in-up.in-view {
-    @apply translate-y-0 opacity-100;
-  }
-
-  .hide-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none;
   }
 }
