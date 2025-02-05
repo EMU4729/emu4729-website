@@ -46,7 +46,7 @@
 }
 
 @utility fade-in-up {
-  @apply transition ease-out duration-500 delay-100 translate-y-5 opacity-0;
+  @apply translate-y-5 opacity-0 transition delay-100 duration-500 ease-out;
 
   &.in-view {
     @apply translate-y-0 opacity-100;
@@ -104,9 +104,9 @@
     font-style: normal;
     font-display: fallback;
   }
-
-  /* Tailwind stuff */
 }
+
+/* Tailwind stuff */
 @layer base {
   :root {
     @apply dark:[color-scheme:dark];
@@ -117,7 +117,7 @@
   }
 
   body {
-    @apply font-body text-lg flex flex-col min-h-screen dark:bg-gray-10 dark:text-white;
+    @apply font-body dark:bg-gray-10 flex min-h-screen flex-col text-lg dark:text-white;
   }
 
   /* axes all motion effects if user prefers reduced motion */

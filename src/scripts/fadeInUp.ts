@@ -9,7 +9,7 @@ const observer = new IntersectionObserver(
   {
     root: null,
     threshold: 0,
-  }
+  },
 );
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
       } else {
         observer.observe(element);
       }
-    }
+    },
   );
 });
 
