@@ -23,13 +23,13 @@ const heroSrc = `url(${await getImage({
 <Layout title="Home | EMU Robotics">
   <!-- HERO SECTION-->
   <section
-    class="min-h-[60vh] text-white flex flex-col place-content-center text-center hero-bg"
+    class="hero-bg flex min-h-[60vh] flex-col place-content-center text-center text-white"
   >
     <div
-      class="self-center max-w-2xl flex flex-col gap-4 fade-in-up p-5 rounded-lg bg-gray-10 bg-opacity-40 backdrop-blur-lg"
+      class="fade-in-up bg-gray-10 bg-opacity-40 flex max-w-2xl flex-col gap-4 self-center rounded-lg p-5 backdrop-blur-lg"
     >
       <!-- this is uppercase because the font looks weird with correct casing -->
-      <h1 class="text-6xl font-heading font-bold drop-shadow-sm">
+      <h1 class="font-heading text-6xl font-bold drop-shadow-sm">
         EMU ROBOTICS
       </h1>
       <p class="text-lg">
@@ -68,29 +68,29 @@ const heroSrc = `url(${await getImage({
   <!-- TAGLINE SECTION -->
   <section
     id="about"
-    class="bg-red-100 text-white py-10 px-5 flex flex-col text-center"
+    class="flex flex-col bg-red-100 px-5 py-10 text-center text-white"
   >
-    <div class="self-center max-w-4xl flex flex-col gap-5 fade-in-up">
-      <h1 class="font-bold text-4xl">
+    <div class="fade-in-up flex max-w-4xl flex-col gap-5 self-center">
+      <h1 class="text-4xl font-bold">
         Propelling young people into engineering by facilitating STEM learning
       </h1>
-      <h2 class="font-bold text-2xl">
+      <h2 class="text-2xl font-bold">
         Enthusiastic Students + 10 Weeks = 1 Competitive Robot
       </h2>
     </div>
   </section>
 
   <!-- SKILL AREAS SECTION -->
-  <section class="mt-10 px-5 md:px-36 flex flex-col gap-2">
-    <h1 class="font-bold text-3xl">Skill Areas</h1>
-    <p class="text-xl text-gray-40 dark:text-gray-70">
+  <section class="mt-10 flex flex-col gap-2 px-5 md:px-36">
+    <h1 class="text-3xl font-bold">Skill Areas</h1>
+    <p class="text-gray-40 dark:text-gray-70 text-xl">
       Building a robot requires a wide range of skills, all of which you'll have
       a chance to learn. <em>You do not need any prior experience;</em> our mentors
       are here to develop your skills.
     </p>
   </section>
 
-  <div class="mt-5 px-5 flex flex-col gap-3 fade-in-up">
+  <div class="fade-in-up mt-5 flex flex-col gap-3 px-5">
     <SkillCard title="Computer Aided Design (CAD)" image={cadImage}>
       <i class="fa fa-file-pen" slot="icon"></i>
       <span slot="description"
@@ -143,45 +143,45 @@ const heroSrc = `url(${await getImage({
 
   <!-- AGE DEMOGRAPHICS SECTION -->
   <section
-    class="my-10 px-5 md:px-36 flex flex-col items-center text-center gap-3 fade-in-up"
+    class="fade-in-up my-10 flex flex-col items-center gap-3 px-5 text-center md:px-36"
   >
-    <h1 class="font-bold text-3xl">Who it's for</h1>
+    <h1 class="text-3xl font-bold">Who it's for</h1>
     <div class="flex gap-3">
       <div
-        class="border-1 border-gray-70 dark:border-gray-30 rounded-lg p-3 flex flex-col items-center gap-1"
+        class="border-gray-70 dark:border-gray-30 flex flex-col items-center gap-1 rounded-lg border-1 p-3"
       >
-        <h2 class="font-bold text-xl">EMU Chicks</h2>
-        <h3 class="text-lg text-gray-40 dark:text-gray-70">
+        <h2 class="text-xl font-bold">EMU Chicks</h2>
+        <h3 class="text-gray-40 dark:text-gray-70 text-lg">
           Years 2-5 (Ages 7-10)
         </h3>
-        <h3 class="text-lg text-gray-40 dark:text-gray-70">
+        <h3 class="text-gray-40 dark:text-gray-70 text-lg">
           Mondays 4:30 PM to 6:30 PM
         </h3>
       </div>
       <div
-        class="border-1 border-gray-70 dark:border-gray-30 rounded-lg p-3 flex flex-col items-center gap-1"
+        class="border-gray-70 dark:border-gray-30 flex flex-col items-center gap-1 rounded-lg border-1 p-3"
       >
-        <h2 class="font-bold text-xl">Junior Team (FLL)</h2>
-        <h3 class="text-lg text-gray-40 dark:text-gray-70">
+        <h2 class="text-xl font-bold">Junior Team (FLL)</h2>
+        <h3 class="text-gray-40 dark:text-gray-70 text-lg">
           Years 5-8 (Ages 10-14)
         </h3>
-        <h3 class="text-lg text-gray-40 dark:text-gray-70">
+        <h3 class="text-gray-40 dark:text-gray-70 text-lg">
           Mondays 6:30 PM to 8:30 PM
         </h3>
       </div>
       <div
-        class="border-1 border-gray-70 dark:border-gray-30 rounded-lg p-3 flex flex-col items-center gap-1"
+        class="border-gray-70 dark:border-gray-30 flex flex-col items-center gap-1 rounded-lg border-1 p-3"
       >
-        <h2 class="font-bold text-xl">Senior Team (FRC)</h2>
-        <h3 class="text-lg text-gray-40 dark:text-gray-70">
+        <h2 class="text-xl font-bold">Senior Team (FRC)</h2>
+        <h3 class="text-gray-40 dark:text-gray-70 text-lg">
           Years 8-12 (Ages 14+)
         </h3>
-        <h3 class="text-lg text-gray-40 dark:text-gray-70">
+        <h3 class="text-gray-40 dark:text-gray-70 text-lg">
           Wednesdays 4:30 PM to 8:30 PM
         </h3>
       </div>
     </div>
-    <h3 class="text-lg text-gray-40 dark:text-gray-70">
+    <h3 class="text-gray-40 dark:text-gray-70 text-lg">
       <strong>Location:</strong> Lab G14, UNSW School of Electrical Engineering and
       Telecommunications
     </h3>
@@ -192,7 +192,7 @@ const heroSrc = `url(${await getImage({
   <iframe
     title="EMU Robotics on Google Maps"
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.905712724222!2d151.22946261534418!3d-33.917826180642635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b18a49200f77%3A0x22ef11c818e4830!2sSchool%20of%20Electrical%20Engineering%20and%20Telecommunications!5e0!3m2!1sen!2sau!4v1657507239460!5m2!1sen!2sau"
-    class="border-0 w-full min-h-[50vh]"
+    class="min-h-[50vh] w-full border-0"
     allowfullscreen="false"
     referrerpolicy="no-referrer-when-downgrade"
     loading="lazy"></iframe>

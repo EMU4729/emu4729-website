@@ -28,14 +28,14 @@ const { Content } = await post.render();
 ---
 
 <Layout title={`${title} | EMU Robotics`}>
-  <div class="flex flex-col gap-1 px-5 mx-auto max-w-[65ch]">
-    <a href="/blog" class="underline text-gray-40 dark:text-gray-60">Back</a>
+  <div class="mx-auto flex max-w-[65ch] flex-col gap-1 px-5">
+    <a href="/blog" class="text-gray-40 dark:text-gray-60 underline">Back</a>
     {
       image && (
         <ResponsiveImage
           src={imageMeta}
           alt={imageAlt}
-          class="rounded-md w-min self-center my-5 object-contain"
+          class="my-5 w-min self-center rounded-md object-contain"
         />
       )
     }
@@ -49,7 +49,7 @@ const { Content } = await post.render();
         })
       }
     </p>
-    <h1 class="font-bold text-xl md:text-3xl">{title}</h1>
+    <h1 class="text-xl font-bold md:text-3xl">{title}</h1>
     <h2 class="text-lg md:text-2xl">{description}</h2>
     <article class="prose dark:prose-invert md:prose-lg lg:prose-xl my-5">
       <Content />

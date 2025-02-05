@@ -8,7 +8,7 @@ const { href } = Astro.props as Props;
 
 <a
   href={href}
-  class="block py-1 md:py-0 md:inline transition ease-out hover:text-red-60 dark:hover:text-red-140 hover:-translate-y-[2px]"
+  class="hover:text-red-60 dark:hover:text-red-140 block py-1 transition ease-out hover:-translate-y-[2px] md:inline md:py-0"
 >
   <slot />
 </a>

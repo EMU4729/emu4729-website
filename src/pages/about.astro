@@ -1,17 +1,23 @@
 ---
+import boeingLogo from "@assets/branding/boeing.png";
+import chiefScientistLogo from "@assets/branding/chiefscientist.jpg";
+import geneHaasLogo from "@assets/branding/genehaas.jpg";
+import intuitiveLogo from "@assets/branding/intuitivefoundation.png";
+import rockwellLogo from "@assets/branding/rockwell.svg";
+import unswLogo from "@assets/branding/unsweet.png";
 import awardsImage from "@assets/photos/awards.jpg";
 import teamImage from "@assets/photos/team-2020.jpg";
-import AboutTimelineItem from "@components/AboutTimelineItem.astro";
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import Layout from "@layouts/Layout.astro";
+import InlineLink from "@components/InlineLink.astro";
 ---
 
 <Layout title="About | EMU Robotics">
   <!-- GENERAL SECTION -->
   <section
-    class="mt-10 flex flex-col items-center gap-3 px-5 md:px-0 md:max-w-[50%] mx-auto text-center fade-in-up"
+    class="fade-in-up mx-auto mt-10 flex flex-col items-center gap-3 px-5 text-center md:max-w-[50%] md:px-0"
   >
-    <h1 class="font-bold text-4xl">About EMU Robotics</h1>
+    <h1 class="text-4xl font-bold">About EMU Robotics</h1>
     <h3 class="text-xl">
       We are a team of students who compete in FIRST competitions and we have a
       group of mentors who help us along the way with building robots.
@@ -19,109 +25,215 @@ import Layout from "@layouts/Layout.astro";
     <ResponsiveImage src={teamImage} alt="team photo" />
   </section>
 
-  <!-- TIMELINE SECTION -->
+  <!-- SPONSORS SECTION -->
   <section
-    class="mt-6 flex flex-col items-center gap-3 px-5 md:px-0 md:w-[75%] lg:w-[50%] mx-auto text-center"
+    class="fade-in-up mx-auto mt-6 flex flex-col items-center gap-3 px-5 text-center md:w-[75%] md:px-0 lg:w-[50%]"
   >
-    <h1 class="font-bold text-4xl fade-in-up">Our History</h1>
-    <div
-      class="border-l-2 border-dotted border-gray-80 dark:border-gray-20 pl-3 w-full flex flex-col gap-3"
+    <h1 class="text-4xl font-bold">Our Sponsors</h1>
+    <a
+      href="https://www.unsw.edu.au/engineering/our-schools/electrical-engineering-telecommunications"
     >
-      <AboutTimelineItem time="2012" title="Founded">
-        Our first meeting was in December 2012 and at that time there were only
-        4 mentors and 8 students.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2013" title="First Comp">
-        2013 was our training year with us participating in Duel Down Under, our
-        local off season event. It was our first competition where our robot was
-        made out of MDF and dubbed our 'cardboard robot'.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2015" title="First Regional">
-        2015 was our first regional event. This is when the FIRST FRC
-        competition truly came to Australia, allowing local teams to compete in
-        an international competition without leaving Australia!
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2016" title="First FRC Award">
-        2016 was our first big year as we won the Judges award in FRC due to our
-        grappling hook. We also won the Motivate award in 2016.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2016" title="Mini-bot">
-        In 2016, we created our own mini-bot to use as a robotics teaching tool.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2016" title="GERRIC courses">
-        July 2016, we hosted our first GERRIC courses. Working with year 5 and 6
-        students teaching them about robotics (CAD, electrical, mechanical and
-        coding). We also hosted a library course for early-highschool students
-        interested in robotics.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2017" title="Team Growth">
-        In 2017, we grew from 6 students in 2012 to over 20 students.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2018" title="Gracious Professionalism">
-        In 2018, we won the Gracious Professionalism award at DDU as we helped
-        other teams.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2019" title="Junior Team Formed">
-        April 2019, responding to the need for a robotics program for late
-        primary/early high school students we started an FLL team with 20
-        students joining in the first meeting.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2019" title="Junior Team Demonstration">
-        July 2019, our FLL team participated in a demonstration, receiving the
-        Synergy award.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2019" title="First FLL Comp">
-        November 2019, our two FLL teams came second and fourth in the first
-        regional competition.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2019" title="More Team Growth">
-        During 2019, the senior FRC team had grown to almost 40 students and 10
-        mentors.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2020" title="Robotics Workshops">
-        January 2020, we held robotics workshop for high school students.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2020" title="COVID">
-        Unable to meet in person we went online. We concentrated on robotics
-        based on the LEGO EV3 kits with the aim of participating in the FIRST
-        FLL competition that year.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2020" title="FLL Champions">
-        Our FLL competition was in person. Our team were Regional Champions and
-        progressed to Nationals which was held virtually.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2021" title="FLL APOC Participation">
-        We again ran a virtual FLL team grabbing in person sessions whenever it
-        was possible. For a second year, our team progressed to Nationals. June
-        2021, wildcard entry into APOC (Australia Pacific Open Championship)
-        winning the Motivate award.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2022" title="Returning to FRC">
-        Return to FRC competition with our robot being built on the front porch
-        of a team member.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2022" title="Returning to the lab">
-        April 2022, the journey to rebuild both junior and senior teams begins.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2022" title="Victory at DDU">
-        May 2022, our team, along with our alliance partners, won DDU.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2023" title="Open Night">
-        May 2023, saw about 60 students plus parents visit us. Many students
-        joined. This was also the start of our EMU Chicks team for 7 to 10 year
-        olds.
-      </AboutTimelineItem>
-      <AboutTimelineItem time="2023" title="Current Student Numbers">
-        Over all three teams, we currently have 45 students and growing.
-      </AboutTimelineItem>
-    </div>
+      <ResponsiveImage
+        src={unswLogo}
+        class="bg-white p-5"
+        alt="UNSW School of Electical Engineering Logo"
+      />
+    </a>
+    <a href="https://www.rockwellautomation.com/en-us.html">
+      <ResponsiveImage src={rockwellLogo} alt="Rockwell Automation Logo" />
+    </a>
+    <a href="https://www.boeing.com/">
+      <ResponsiveImage src={boeingLogo} alt="Boeing Logo" />
+    </a>
+    <a href="https://ghaasfoundation.org/">
+      <ResponsiveImage
+        src={geneHaasLogo}
+        class="bg-white px-5 pb-5"
+        alt="Gene Haas Foundation Logo"
+      />
+    </a>
+    <a href="https://www.chiefscientist.nsw.gov.au/">
+      <ResponsiveImage
+        src={chiefScientistLogo}
+        alt="Intuitive Foundation Logo"
+      />
+    </a>
+    <a href="https://www.intuitive-foundation.org/">
+      <ResponsiveImage
+        src={intuitiveLogo}
+        class="bg-white p-5"
+        alt="Intuitive Foundation Logo"
+      />
+    </a>
   </section>
 
-  <!-- AWARDS SECTION -->
+  <!-- FOUNDING SECTION -->
   <section
-    class="p-5 flex flex-col items-center gap-3 px-5 md:px-0 md:max-w-[50%] mx-auto text-center fade-in-up"
+    class="fade-in-up mx-auto flex flex-col items-center gap-3 p-5 px-5 text-center md:max-w-[50%] md:px-0"
   >
-    <h1 class="font-bold text-3xl">Awards</h1>
-    <ResponsiveImage src={awardsImage} alt="awards" />
+    <h1 class="text-4xl font-bold">Our Founding</h1>
+    <p>
+      Our first meeting was in December 2012, and at that time there were only 4
+      mentors and 8 students. We wanted to and we still strive to be a diverse,
+      inclusive place for passionate students to learn STEM and have fun through
+      robotics.
+    </p>
+  </section>
+
+  <!-- ACCOMPLISHMENTS SECTION -->
+  <section
+    class="fade-in-up mx-auto flex flex-col gap-3 p-5 px-5 md:max-w-[50%] md:px-0"
+  >
+    <h1 class="text-left text-4xl font-bold">Our Accomplishments</h1>
+    <ResponsiveImage src={awardsImage} alt="Our awards cabinet" />
+    <div>
+      <p class="text-xl font-bold">2013</p>
+      <ul class="list-disc">
+        <li>We participated in our first FRC Event, DDU (Duel Down Under).</li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2014</p>
+      <ul class="list-disc">
+        <li>
+          We opened a stall in our first yearly UNSW Open Day, exposing students
+          of all ages to robotics and FRC.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2015</p>
+      <ul class="list-disc">
+        <li>We participated in our first FRC Regional Event.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2016</p>
+      <ul class="list-disc">
+        <li>
+          We won our first FRC Awards in 2016 - a design award for our grappling
+          hook and the Motivate award.
+        </li>
+        <li>
+          We hosted our GERRIC courses, teaching year 5 and 6 students about
+          robotics.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2018</p>
+      <ul class="list-disc">
+        <li>
+          We won the Gracious Professionalism award at DDU as we helped other
+          teams.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2019</p>
+      <ul class="list-disc">
+        <li>
+          We formed the Junior Team, with 20 late primary/early high school
+          students joining in the first meeting.
+        </li>
+        <li>
+          We participated in our first FLL competition, in which our 2 teams
+          came second and fourth.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2020</p>
+      <ul class="list-disc">
+        <li>We held robotics workshops for high school students.</li>
+        <li>
+          We went online due to social distancing restrictions, and managed to
+          participate in the FLL competition that year, progressing to
+          Nationals.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2021</p>
+
+      <ul class="list-disc">
+        <li>
+          We were wildcarded into FLL APOC (Asia Pacific Open Championships),
+          winning the Motivate award.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2022</p>
+      <ul class="list-disc">
+        <li>
+          We return to the FRC competition with our robot being built on the
+          front porch of a team member.
+        </li>
+        <li>We, along with our alliance partners, won the DDU playoffs.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2023</p>
+      <ul class="list-disc">
+        <li>
+          We participated in our first yearly Rhodes Robot Ball, exposing the
+          local youth to <s>the sheer coolness of</s> our robot.
+        </li>
+        <li>
+          We held our first yearly Open Night, and saw about 60 students and
+          parents visit us, many of which who joined the team.
+        </li>
+        <li>We started the EMU Chicks team for 7-10 year olds.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2024</p>
+      <ul class="list-disc">
+        <li>
+          We introduced robotics to students in the Mongol Language School in
+          Arncliffe West and Cantebury.
+        </li>
+        <li>
+          We helped start Sydney Boys High School's FTC Team, Sydney High
+          Voltage.
+        </li>
+        <li>
+          Some our team members travelled around rural Mongolia, exposing the
+          children there to STEM and robotics.
+        </li>
+        <li>
+          We held workshops at UNSW O-Week, recruiting some new university
+          students as mentors in the process.
+        </li>
+        <li>
+          We assisted OLSH College in starting a robotics elective using LEGO
+          EV3s for Year 10 students.
+        </li>
+        <li>
+          We held a robotics workshop at St George Girls High School,
+          introducing Year 9s to programming LEGO EV3s.
+        </li>
+        <li>
+          We started an initiative to have our students volunteer in multiple
+          FLL and FTC competitions.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xl font-bold">2025</p>
+      <ul class="list-disc">
+        <li>
+          We, along with other Australian members of the FIRST community,
+          started the Mihirungs Ri3D (Robot in 3 Days) team, and built a robot
+          in 3 days.
+        </li>
+      </ul>
+    </div>
+    <p class="text-xl">
+      That was a lot. If you want to be a part of our next accomplishments, <InlineLink
+        href="/join">join us!</InlineLink
+      >
+    </p>
   </section>
 </Layout>
