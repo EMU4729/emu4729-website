@@ -7,13 +7,13 @@
   const indicator = document.getElementById("color-mode-indicator");
   const button = document.getElementById("color-mode-button");
 
-  const getColorMode = () => {
+  function getColorMode() {
     if (localStorage[key] === "dark") return "dark";
     if (key in localStorage) return "light";
     return "system";
-  };
+  }
 
-  const applyColorMode = () => {
+  function applyColorMode() {
     switch (getColorMode()) {
       case "light":
         document.documentElement.classList.remove("dark");
@@ -38,18 +38,18 @@
         button.title = "System Color Mode";
         break;
     }
-  };
+  }
 
-  const updateColorMode = (setting: string) => {
+  function updateColorMode(setting: string) {
     if (setting === "system") {
       localStorage.removeItem(key);
     } else {
       localStorage[key] = setting;
     }
     applyColorMode();
-  };
+  }
 
-  button.onclick = () => {
+  button.addEventListener("click", () => {
     switch (getColorMode()) {
       case "system":
         updateColorMode("light");
@@ -61,7 +61,7 @@
         updateColorMode("system");
         break;
     }
-  };
+  });
 
   applyColorMode();
 </script>
