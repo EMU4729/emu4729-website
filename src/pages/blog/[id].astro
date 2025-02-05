@@ -2,29 +2,30 @@
 import ResponsiveImage from "@components/ResponsiveImage.astro";
 import Layout from "@layouts/Layout.astro";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
   const posts = await getCollection("blog");
 
   return posts.map((post) => ({
     params: {
-      slug: post.slug,
+      id: post.id,
     },
     props: {
-      post,
+      id: post.id,
     },
   }));
 }) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { post } = Astro.props;
+const { id } = Astro.props;
+const post = await getEntry("blog", id);
 const { title, date, description, image, imageAlt } = post.data;
 const { default: imageMeta } = image
   ? await import(/* @vite-ignore */ image)
   : { default: undefined };
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <Layout title={`${title} | EMU Robotics`}>
