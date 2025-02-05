@@ -19,3 +19,4 @@ jobs:
         with:
           name: www
           path: dist
+          include-hidden-files: true
