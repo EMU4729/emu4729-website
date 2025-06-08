@@ -10,7 +10,10 @@ import codeImage from "@assets/photos/code.jpg";
 import elecImage from "@assets/photos/elec.jpg";
 import heroImage from "@assets/photos/game-6-darkened.jpg";
 import shirtImage from "@assets/photos/team-shirt.jpg";
-import { getImage } from "astro:assets";
+import robotImage from "@assets/photos/game-7.png";
+import impactImage from "@assets/photos/impact.jpg";
+import teamImage from "@assets/photos/team-2025.jpg";
+import { Image, getImage } from "astro:assets";
 
 // TODO: This generates a jpg for some reason??
 const heroSrc = `url(${await getImage({
@@ -78,6 +81,19 @@ const heroSrc = `url(${await getImage({
         Enthusiastic Students + 10 Weeks = 1 Competitive Robot
       </h2>
     </div>
+  </section>
+
+  <!-- SLIDES SECTION -->
+  <section class="mt-10 flex flex-nowrap w-full overflow-x-auto">
+    <span>
+      <Image height={1000} src={impactImage} alt="EMU Robotics teaches students">
+    </span>
+    <span>
+    <Image height={1000} src={teamImage} alt="EMU Robotics 2025 team photo">
+    </span>
+    <span>
+    <Image height={1000} src={robotImage} alt="EMU Robotics 2025 robot in game">
+    </span>
   </section>
 
   <!-- SKILL AREAS SECTION -->
