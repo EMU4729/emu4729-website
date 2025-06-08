@@ -1,0 +1,39 @@
+---
+import "@styles/base.css";
+import { Image } from "astro:assets";
+import impactPhoto from "./_impact.jpg";
+import teamPhoto from "./_team.jpg";
+import robotPhoto from "./_robot.jpg";
+
+const description =
+  "EMU Robotics is an Australian robotics school and team based in UNSW that competes in the FIRST Robotics Competition and the FIRST Lego League competitions.";
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hero | EMU Robotics</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- SEO Stuff -->
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="description" content={description} />
+    <meta name="og:title" content="Hero | EMU Robotics" />
+    <meta name="og:image" content={new URL("/social.jpg", Astro.site)} />
+    <meta name="og:url" content={Astro.url} />
+    <meta name="og:description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+
+  <body>
+    Below images are combined as a hero slider:
+    <div class="flex">
+      <Image height={1000} src={teamPhoto} alt="team" /> 
+      <Image height={1000} src={impactPhoto} alt="impact" /> 
+      <Image height={1000} src={robotPhoto} alt="robot" /> 
+    </div>
+  </body>
+</html>
