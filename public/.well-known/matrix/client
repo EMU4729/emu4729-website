@@ -1,1 +1,9 @@
-{"m.homeserver":{"base_url":"https://matrix.emu-robotics.au"}}
+{
+  "m.homeserver": { "base_url": "https://matrix.emu-robotics.au" },
+  "org.matrix.msc4143.rtc_foci": [
+    {
+      "type": "livekit",
+      "livekit_service_url": "https://matrix-rtc.emu-robotics.au/livekit/jwt"
+    }
+  ]
+}
