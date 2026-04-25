@@ -10,17 +10,17 @@
     "format": "prettier -w ./src/**/*.{astro,md,ts,css}"
   },
   "devDependencies": {
-    "@astrojs/sitemap": "^3.4.2",
-    "astro": "^5.12.9",
-    "prettier": "^3.6.2",
+    "@astrojs/sitemap": "3.7.2",
+    "astro": "6.1.9",
+    "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.14"
+    "prettier-plugin-tailwindcss": "^0.7.3"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.11",
-    "tailwindcss": "^4.1.11"
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.2.4",
+    "tailwindcss": "^4.2.4"
   },
   "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
