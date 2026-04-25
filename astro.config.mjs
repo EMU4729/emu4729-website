@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://first.unsw.edu.au", // TODO: Change to new domain once deployed
+  site: "https://emu-robotics.au",
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
