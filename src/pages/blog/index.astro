@@ -33,7 +33,7 @@ posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
             {data.image && (
               <ResponsiveImage
                 src={imageMeta}
-                alt={data.imageAlt}
+                alt={data.imageAlt ?? null}
                 class="h-auto rounded-md object-cover md:w-32"
               />
             )}
