@@ -114,8 +114,8 @@ const accomplishments = [
   >
     <h1 class="text-4xl font-bold">About EMU Robotics</h1>
     <h3 class="text-xl">
-      We are a team of students who compete in FIRST competitions and we have a
-      group of mentors who help us along the way with building robots.
+      We are a team of students who compete in FIRST competitions alongside a
+      group of mentors who help us build robots.
     </h3>
     <ResponsiveImage src={teamImage} alt="team photo" />
   </section>
@@ -180,27 +180,79 @@ const accomplishments = [
   </section>
 
   <!-- ACCOMPLISHMENTS SECTION -->
-  <section
-    class="fade-in-up mx-auto flex flex-col gap-3 p-5 md:max-w-[50%] md:px-0"
-  >
-    <h1 class="text-left text-4xl font-bold">Our Accomplishments</h1>
-    <ResponsiveImage src={awardsImage} alt="Our awards cabinet" />
-    {
-      accomplishments.map(({ year, items }) => (
-        <div>
-          <p class="text-xl font-bold">{year}</p>
-          <ul class="list-disc">
-            {items.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </div>
-      ))
-    }
-    <p class="text-xl">
-      That was a lot. If you want to be a part of our next accomplishments, <InlineLink
-        href="/join">join us!</InlineLink
-      >
-    </p>
-  </section>
+<section class="fade-in-up mx-auto flex flex-col gap-3 p-5 md:max-w-[50%] md:px-0">
+  <h1 class="text-left text-4xl font-bold">Our Accomplishments</h1>
+  <ResponsiveImage src={awardsImage} alt="Our awards cabinet" />
+
+  <div class="relative mt-6">
+    <!-- Spine — left-[18px] centers it through the 14px dots at left-[11px] -->
+    <div class="absolute bottom-0 left-[18px] top-0 w-0.5 bg-gray-700"></div>
+
+    <div class="flex flex-col gap-7">
+      {accomplishments.map(({ year, items }) => {
+        const isIntl = year === 2026;
+        const isAward = [2016, 2018, 2021, 2022].includes(year);
+        const isFounding = year === 2012;
+        const isExpansion = [2019, 2023].includes(year);
+
+        const dotBg = isIntl ? '#ef4444' : isAward ? '#f59e0b' : isFounding ? '#15803d' : 'transparent';
+        const dotBorder = isIntl ? '#ef4444' : isAward ? '#f59e0b' : isFounding ? '#15803d' : '#6b7280';
+        const cardBorderLeft = isIntl ? '3px solid #ef4444' : isAward ? '3px solid #f59e0b' : 'none';
+        const cardBg = isIntl ? '#fef2f2' : 'var(--card-bg, #1a1a1a)';
+        const textColor = isIntl ? '#7f1d1d' : '#9ca3af';
+        const bulletBg = isIntl ? '#f87171' : isAward ? '#fbbf24' : '#6b7280';
+
+        const badge = isIntl ? { label: 'International', bg: '#fee2e2', color: '#991b1b' }
+          : isAward ? { label: 'Award', bg: '#fef3c7', color: '#92400e' }
+          : isFounding ? { label: 'Founded', bg: '#dcfce7', color: '#166534' }
+          : isExpansion ? { label: 'Expansion', bg: '#dbeafe', color: '#1e40af' }
+          : null;
+
+        return (
+          <div class="relative pl-12">
+            <!-- Dot: left-[11px] + width 14px = center at 18px, matching the spine -->
+            <div
+              class="absolute left-[11px] top-1.5 h-3.5 w-3.5 rounded-full border-2"
+              style={{ backgroundColor: dotBg, borderColor: dotBorder }}
+            />
+
+            <div class="mb-2 flex items-center gap-2">
+              <span class="text-xs font-semibold uppercase tracking-widest text-gray-400">{year}</span>
+              {badge && (
+                <span
+                  class="rounded-full px-2 py-0.5 text-[10px] font-semibold"
+                  style={{ backgroundColor: badge.bg, color: badge.color }}
+                >
+                  {badge.label}
+                </span>
+              )}
+            </div>
+
+            <div
+              class="rounded-2xl border border-gray-800 px-5 py-4"
+              style={{ backgroundColor: cardBg, borderLeft: cardBorderLeft }}
+            >
+              <ul class="flex flex-col gap-2">
+                {items.map((item) => (
+                  <li class="flex items-start gap-2 text-sm leading-relaxed" style={{ color: textColor }}>
+                    <span
+                      class="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                      style={{ backgroundColor: bulletBg }}
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+
+  <p class="mt-2 text-xl">
+    That was a lot. If you want to be a part of our next accomplishments,{" "}
+    <InlineLink href="/join">join us!</InlineLink>
+  </p>
+</section>
 </Layout>
