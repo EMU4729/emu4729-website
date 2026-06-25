@@ -36,28 +36,20 @@ const heroSrc = `url(${await getImage({
         EMU ROBOTICS
       </h1>
       <p class="text-lg">
-        We are EMU Robotics, an Australian robotics team housed in
-
-        <!--
-            we need these prettier-ignore statements because astro (for some reason)
-            inserts a space in generated markup on every new line, and prettier
-            auto-newlines long lines so it sucks
-
-            if you don't get what i mean, just remove the prettier-ignore's (and reformat) and you'll see
-          -->
-
-        <!-- prettier-ignore -->
-        <InlineLink href="https://www.unsw.edu.au">UNSW</InlineLink>. EMU
-        competes in the
-
-        <!-- prettier-ignore -->
-        <InlineLink href="https://firstaustralia.org/programs/first-robotics-competition/"
-          >FIRST Robotics Competition</InlineLink>
-        and
-
-        <!-- prettier-ignore -->
-        <InlineLink href="https://firstaustralia.org/programs/first-lego-league/"
-          >FIRST LEGO League</InlineLink>.
+        We are EMU Robotics, an Australian robotics team housed in{" "}
+        <InlineLink href="https://www.unsw.edu.au">UNSW</InlineLink>.{" "}
+        EMU competes in the{" "}
+        <InlineLink
+          href="https://firstaustralia.org/programs/first-robotics-competition/"
+        >
+          FIRST Robotics Competition
+        </InlineLink>
+        {" "}and{" "}
+        <InlineLink
+          href="https://firstaustralia.org/programs/first-lego-league/"
+        >
+          FIRST LEGO League
+        </InlineLink>.
       </p>
       <p class="text-lg font-bold">
         Welcoming school students of any experience level.
